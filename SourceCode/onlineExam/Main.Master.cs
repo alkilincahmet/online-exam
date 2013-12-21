@@ -11,7 +11,16 @@ namespace onlineExam
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userId"] != null)
+            {
+                loginWrap.Visible = false;
+                userDiv.Visible = true;
+                lblUserName.Text = Session["FullName"].ToString();
 
+            }
         }
+
+
+
     }
 }
