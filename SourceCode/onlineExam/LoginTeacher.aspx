@@ -11,6 +11,49 @@
         {
             text-indent: 0 !important;
         }
+        
+       .submit
+        {
+            background-color: #68b12f;
+            background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
+            background: -webkit-linear-gradient(top, #68b12f, #50911e);
+            background: -moz-linear-gradient(top, #68b12f, #50911e);
+            background: -ms-linear-gradient(top, #68b12f, #50911e);
+            background: -o-linear-gradient(top, #68b12f, #50911e);
+            background: linear-gradient(top, #68b12f, #50911e);
+            border: 1px solid #509111;
+            border-bottom: 1px solid #5b992b;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            box-shadow: inset 0 1px 0 0 #9fd574;
+            -webkit-box-shadow: 0 1px 0 0 #9fd574 inset;
+            -moz-box-shadow: 0 1px 0 0 #9fd574 inset;
+            -ms-box-shadow: 0 1px 0 0 #9fd574 inset;
+            -o-box-shadow: 0 1px 0 0 #9fd574 inset;
+            color: white;
+            font-weight: bold;
+            padding: 6px 20px;
+            text-align: center;
+            text-shadow: 0 -1px 0 #396715;
+        }
+        .submit:hover
+        {
+            opacity: .85;
+            cursor: pointer;
+        }
+       .submit:active
+        {
+            border: 1px solid #20911e;
+            box-shadow: 0 0 10px 5px #356b0b inset;
+            -webkit-box-shadow: 0 0 10px 5px #356b0b inset;
+            -moz-box-shadow: 0 0 10px 5px #356b0b inset;
+            -ms-box-shadow: 0 0 10px 5px #356b0b inset;
+            -o-box-shadow: 0 0 10px 5px #356b0b inset;
+        }
+        
         @media screen,projection
         {
             cufon
@@ -84,15 +127,16 @@
                                                     <label for="Username">
                                                         Username</label>
                                                     <span class="text">
-                                                        <input id="Username" class="required" name="username" type="text" value="" tabindex="1"></span>
+                                                        <input runat="server" id="txtUsername" class="required" name="username" type="text"
+                                                            value="" tabindex="1"></span>
                                                 </div>
                                                 <div class="row">
                                                     <a href="#" class="forgot">Forgot your password?</a>
                                                     <label for="Password">
                                                         Password</label>
                                                     <span class="text">
-                                                        <input id="Password" class="required" name="password" type="password" value="" tabindex="2"
-                                                            style="display: inline-block;"><input type="text" style="display: none;"></span>
+                                                        <input runat="server" id="txtPassword" class="required" name="password" type="password"
+                                                            value="" tabindex="2" style="display: inline-block;"><input type="text" style="display: none;"></span>
                                                 </div>
                                                 <div class="check-holder">
                                                     <div class="check-frame">
@@ -106,10 +150,14 @@
                                                     <label for="Remember">
                                                         Remember me</label>
                                                 </div>
-                                                <a href="#" class="button">
+
+                                                <div style="margin:10px 0 0 130px;"> <asp:Button ID="btnLogin" class="submit" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                                             </div>
+
+                                                  <%--     <a href="#" class="button">
                                                     <cufon class="cufon cufon-canvas" alt="Login" style="width: 102px; height: 32px;"><canvas width="115" height="34" style="width: 115px; height: 34px; top: 1px; left: -3px;"></canvas><cufontext>Login</cufontext></cufon>
-                                                </a>
-                                                <input type="submit" class="hidden" value="Login" tabindex="3">
+                                                </a>--%>
+                                                <%-- <input type="submit" class="hidden" value="Login" tabindex="3">--%>
                                             </fieldset>
                                         </div>
                                     </div>
@@ -120,7 +168,7 @@
                                     </div>
                                     <div class="login-box page-failure" style="opacity: 0;">
                                         <div class="login-box-holder">
-                                            <span class="fail">Invalid login. &nbsp;&nbsp;<a class="page-back" href="#">Try again?</a></span>
+                                            <asp:Label ID="lblUyari" runat="server" Text=""></asp:Label>
                                         </div>
                                     </div>
                                     <div class="login-box page-password" style="opacity: 0;">
@@ -187,7 +235,6 @@
                     <div class="footer-frame">
                         <div class="footer-container">
                             <p>
-                               
                             </p>
                         </div>
                     </div>
