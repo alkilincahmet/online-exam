@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -52,38 +52,4 @@ namespace onlineExam
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select * from tbl_Users where UserName = @lname and Password = @pwd and Authory=2", con);
                 cmd.Parameters.Add("@lname", SqlDbType.VarChar, 10).Value = txtUsername.Value;
-                cmd.Parameters.Add("@pwd", SqlDbType.VarChar, 10).Value = txtPassword.Value;
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    Session.Add("userId", dr["UserID"]);
-                    Session.Add("fullname", dr["FullName"]);
-                    Session.Add("dlv", dr["LastLoginDate"]);
-                    Session.Add("auth", 1);
-
-
-                    dr.Close();
-                    cmd.CommandText = "update tbl_Users set LastLoginDate = getdate() where UserName = @lname";
-                    cmd.ExecuteNonQuery();
-                    Response.Redirect("default.aspx");
-                }
-                else
-                {
-                    lblUyari.Text = "<span class=\"fail\">Invalid login. &nbsp;&nbsp; Username or Password Incorrect.</span>";
-
-                    dr.Close();
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-    }
-}
+                cmd.Parameters.Add("@pwd", SqlDbType.VarChar, 
