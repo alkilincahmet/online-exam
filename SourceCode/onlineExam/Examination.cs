@@ -10,7 +10,7 @@ namespace onlineExam
 {
     public class Examinationn
     {
-        public int SIZE = 5;
+        public int SIZE;
         public int userId;
         public int examId;
         public String examName;
@@ -35,7 +35,7 @@ namespace onlineExam
             DataSet ds = new DataSet();
             da.Fill(ds, "questions");
             int nquestions = ds.Tables[0].Rows.Count;
-
+            SIZE = nquestions;
 
             Random r = new Random();
             int[] positions = new int[SIZE];
