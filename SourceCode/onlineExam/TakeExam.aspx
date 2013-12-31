@@ -2,6 +2,7 @@
     CodeBehind="TakeExam.aspx.cs" Inherits="onlineExam.TakeExam" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+ 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content-right">
@@ -18,7 +19,8 @@
                     </td>
                     <td>
                         &nbsp;
-                        <asp:DropDownList ID="dropCategory" runat="server" Width="200">
+                        <asp:DropDownList ID="dropCategory" AutoPostBack="true" runat="server" 
+                            Width="200" onselectedindexchanged="dropCategory_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -30,7 +32,7 @@
                     </td>
                     <td>
                         &nbsp;
-                        <asp:DropDownList ID="dropSOrular" runat="server" Width="200">
+                        <asp:DropDownList ID="dropExams" runat="server" Width="200">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -38,12 +40,14 @@
             <br />
             <br />
             <div class="button-previos">
-                <input type="submit" name="b" value="Start" id="btnPrev"></div>
+                <asp:Button ID="btnStart" runat="server" Text="Start" CssClass="Submit" 
+                    onclick="btnStart_Click" />
+                <%--<input type="submit" name="b" value="Start" id="btnPrev" onclick="return btnPrev_onclick()" />--%></div>
             <br />
             <div style="margin-top: 30px; font-family: Tahoma; font-size: 13px;">
                 <span style="font-weight: bold">Note</span>
                 <ul style="list-style: disc; margin-left: 40px;">
-                    <li>Each exam contains 5 question.</li>
+                 
                     <li>Use Next and Previous buttons to navigate between questions</li>
                     <li>Result is displayed after the last questions is answered</li>
                     <li>CANCEL button can be used to cancel the exam</li>
