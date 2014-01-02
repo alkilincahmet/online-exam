@@ -85,6 +85,67 @@ namespace onlineExam
 
         }
 
+        protected void dropCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string catID = dropCategory.SelectedValue;
+            SqlConnection con = new SqlConnection(DBUtil.ConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            try
+            {
+                con.Open();
+                if (catID != "0")
+                {
+                    cmd = new SqlCommand("select DISTINCT e.* from tbl_Exams e,tbl_Questions q WHERE e.ExamID=q.ExamID and CategoryID=" + catID + " order by ExamName", con);
+
+                }
+                else
+                {
+                    cmd = new SqlCommand("select DISTINCT e.* from tbl_Exams e,tbl_Questions q WHERE e.ExamID=q.ExamID order by e.ExamName", con);
+
+                }
+
+
+                SqlDataAdapter a = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                a.Fill(dt);
+
+
+                dropExams.DataTextField = "ExamName";
+                dropExams.DataValueField = "ExamID";
+
+                dropExams.DataSource = dt;
+                dropExams.DataBind();
+
+
+            }
+            catch (Exception) { }
+
+
+
+        }
+
+        protected void btnStart_Click(object sender, EventArgs e)
+        {
+            string catID = dropCategory.SelectedValue;
+            string examID = dropExams.SelectedValue;
+            string examName = dropExams.SelectedItem.Text;
+
+            if (Session["userId"] != null)
+            {
+
+                Examinationn exam = new Examinationn(Int32.Parse(Session["userId"].ToString()), Int32.Parse(examID), examName);
+                exam.GetQuestions();
+                Session.Add("questions", exam);
+                Response.Redirect("examination.aspx");
+            }
+            else
+            {
+                Response.Redirect("loginStudent.aspx");
+            }
+
+
+        }
 
 
 
