@@ -34,6 +34,8 @@ namespace onlineExam
             SqlDataAdapter da = new SqlDataAdapter("select * from tbl_Questions where ExamID = " + examId, con);
             DataSet ds = new DataSet();
             da.Fill(ds, "questions");
+
+
             int nquestions = ds.Tables[0].Rows.Count;
             SIZE = nquestions;
 
@@ -62,7 +64,7 @@ namespace onlineExam
             foreach (int pos in positions)
             {
                 dr = ds.Tables[0].Rows[pos];
-                q = new Question(dr["Question"].ToString(), dr["Answer1"].ToString(), dr["Answer2"].ToString(), dr["Answer3"].ToString(), dr["Answer4"].ToString(), dr["Answer5"].ToString(), dr["CorrectAnswer"].ToString());
+                q = new Question(dr["Question"].ToString(), dr["Answer1"].ToString(), dr["Answer2"].ToString(), dr["Answer3"].ToString(), dr["Answer4"].ToString(), dr["Answer5"].ToString(), dr["CorrectAnswer"].ToString(), dr["ImageUrl"].ToString());
                 questions.Add(q);
             }
 
