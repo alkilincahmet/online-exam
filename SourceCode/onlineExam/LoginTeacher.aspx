@@ -6,13 +6,46 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="Style/login.css" />
     <link rel="stylesheet" type="text/css" href="Style/grid.css" />
+    <script src="Scripts/jquery.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id*=btnSave]").bind("click", function () {
+                var user = {};
+                user.Username = $("[id*=txtRegUsername]").val();
+                user.Password = $("[id*=txtRegPassword]").val();
+                user.Email = $("[id*=txtRegEmail]").val();
+                user.FullName = $("[id*=txtRegFullName]").val();
+                $.ajax({
+                    type: "POST",
+                    url: "LoginTeacher.aspx/SaveUser",
+                    data: '{user: ' + JSON.stringify(user) + '}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        alert("User has been added successfully.");
+                        var txtRegUsername = document.getElementById("txtRegUsername");
+                        txtRegUsername.value = "";
+                        var txtRegPassword = document.getElementById("txtRegPassword");
+                        txtRegPassword.value = "";
+                        var txtRegEmail = document.getElementById("txtRegEmail");
+                        txtRegEmail.value = "";
+                        var txtRegFullName = document.getElementById("txtRegFullName");
+                        txtRegFullName.value = "";
+
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
     <style type="text/css">
         cufon
         {
             text-indent: 0 !important;
         }
         
-       .submit
+        .submit
         {
             background-color: #68b12f;
             background: -webkit-gradient(linear, left top, left bottom, from(#68b12f), to(#50911e));
@@ -44,7 +77,7 @@
             opacity: .85;
             cursor: pointer;
         }
-       .submit:active
+        .submit:active
         {
             border: 1px solid #20911e;
             box-shadow: 0 0 10px 5px #356b0b inset;
@@ -128,14 +161,14 @@
                                                         Username</label>
                                                     <span class="text">
                                                         <input runat="server" id="txtUsername" class="required" name="username" type="text"
-                                                            value="" tabindex="1"></span>
+                                                            value="" tabindex="1" required></span>
                                                 </div>
                                                 <div class="row">
                                                     <a href="#" class="forgot">Forgot your password?</a>
                                                     <label for="Password">
                                                         Password</label>
                                                     <span class="text">
-                                                        <input runat="server" id="txtPassword" class="required" name="password" type="password"
+                                                        <input runat="server" id="txtPassword" class="required" name="password" type="password" required
                                                             value="" tabindex="2" style="display: inline-block;"><input type="text" style="display: none;"></span>
                                                 </div>
                                                 <div class="check-holder">
@@ -150,11 +183,10 @@
                                                     <label for="Remember">
                                                         Remember me</label>
                                                 </div>
-
-                                                <div style="margin:10px 0 0 130px;"> <asp:Button ID="btnLogin" class="submit" runat="server" Text="Login" OnClick="btnLogin_Click" />
-                                             </div>
-
-                                                  <%--     <a href="#" class="button">
+                                                <div style="margin: 10px 0 0 130px;">
+                                                    <asp:Button ID="btnLogin" class="submit" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                                                </div>
+                                                <%--     <a href="#" class="button">
                                                     <cufon class="cufon cufon-canvas" alt="Login" style="width: 102px; height: 32px;"><canvas width="115" height="34" style="width: 115px; height: 34px; top: 1px; left: -3px;"></canvas><cufontext>Login</cufontext></cufon>
                                                 </a>--%>
                                                 <%-- <input type="submit" class="hidden" value="Login" tabindex="3">--%>
@@ -166,24 +198,64 @@
                                             <span class="success">Login successful</span>
                                         </div>
                                     </div>
-                                    <div class="login-box page-failure" style="opacity: 0;">
-                                        <div class="login-box-holder">
+                                      <div style=" margin:10px; color:Red; font-size:16px; ">
+                                       
                                             <asp:Label ID="lblUyari" runat="server" Text=""></asp:Label>
-                                        </div>
+                                      
                                     </div>
                                     <div class="login-box page-password" style="opacity: 0;">
-                                        <div class="heading-holder">
+                                        <%--<div class="heading-holder">
                                             <h2>
                                                 <span>
                                                     <cufon class="cufon cufon-canvas" alt="Teachers" style="width: 270px; height: 50px;"><canvas width="298" height="51" style="width: 298px; height: 51px; top: 2px; left: -3px;"></canvas><cufontext>Teachers</cufontext></cufon>
                                                 </span>
                                             </h2>
+                                        </div>--%>
+                                        <div>
+                                            <fieldset>
+                                                <div class="row">
+                                                    <label for="register">
+                                                        UserName</label>
+                                                    <span class="text padding">
+                                                        <input runat="server" id="txtRegUsername" name="email" class="required-email" type="text" ></span>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="Password">
+                                                        Password</label>
+                                                    <span class="text">
+                                                        <input runat="server" id="txtRegPassword" class="required" name="password" type="password"
+                                                            value="" tabindex="2" style="display: inline-block;"  /></span>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="Password">
+                                                        E-mail</label>
+                                                    <span class="text">
+                                                        <input runat="server" id="txtRegEmail" class="required" value="" tabindex="2" style="display: inline-block;"  /></span>
+                                                </div>
+                                                <div class="row">
+                                                    <label for="Password">
+                                                        Full Name</label>
+                                                    <span class="text">
+                                                        <input runat="server" id="txtRegFullName" class="required" value="" tabindex="2"
+                                                            style="display: inline-block;" ></span>
+                                                </div>
+                                                <div style="margin: 10px 0 0 130px;">
+                                                    <asp:Button ID="btnSave" class="submit" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                                                    <div style="margin-left: 101px; margin-top: -34px;">
+                                                        <span class="nevermind"><a href="#">Oh, nevermind.</a></span></div>
+                                                </div>
+                                                <%--  <a href="#" class="button">
+                                                    <cufon class="cufon cufon-canvas" alt="SEND" style="width: 85px; height: 32px;"><canvas width="99" height="34" style="width: 99px; height: 34px; top: 1px; left: -3px;"></canvas><cufontext>SEND</cufontext></cufon>
+                                                </a>
+                                                --%>
+                                            </fieldset>
                                         </div>
-                                        <div class="text-holder">
+                                        <%--   <div class="text-holder">
                                             <p>
                                                 If we have it on file we’ll send it along.</p>
-                                        </div>
-                                        <div>
+
+                                        </div>--%>
+                                        <%--    <div>
                                             <fieldset>
                                                 <div class="row">
                                                     <label for="email">
@@ -197,7 +269,7 @@
                                                 <input type="submit" class="hidden" value="SEND">
                                                 <span class="nevermind"><a href="#">Oh, nevermind.</a></span>
                                             </fieldset>
-                                        </div>
+                                        </div>--%>
                                     </div>
                                     <div class="login-box page-password-success" style="opacity: 0;">
                                         <div class="login-box-holder">
