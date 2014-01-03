@@ -32,6 +32,7 @@
                 <h5 style="color: red; font-weight: bold;">
                     Question :</h5>
                 <div class="question-img">
+                    <asp:Label ID="lblImage" runat="server" Text=""></asp:Label>
                     <%--   <img src="Images/Exam.jpg" />--%>
                 </div>
                 <div class="question-text">
