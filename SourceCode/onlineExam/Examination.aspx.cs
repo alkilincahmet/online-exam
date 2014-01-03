@@ -36,6 +36,9 @@ namespace onlineExam
             lblCurrentTime.Text = DateTime.Now.ToString();
             lblStartTime.Text = e.StartTime.ToString();
 
+           
+
+
             Question q = e.questions[e.curpos];
 
             question.InnerHtml = q.question;
@@ -45,6 +48,7 @@ namespace onlineExam
             ans4.InnerHtml = q.ans4;
             ans5.InnerHtml = q.ans5;
 
+            lblImage.Text = "<img src=\"" + q.imgUrl + "\" />";
             rbAns1.Checked = false;
             rbAns2.Checked = false;
             rbAns3.Checked = false;
