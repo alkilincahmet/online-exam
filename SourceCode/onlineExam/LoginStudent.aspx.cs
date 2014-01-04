@@ -60,7 +60,7 @@ namespace onlineExam
                     Session.Add("userId", dr["UserID"]);
                     Session.Add("fullname", dr["FullName"]);
                     Session.Add("dlv", dr["LastLoginDate"]);
-                    Session.Add("auth", 1);
+                    Session.Add("auth", 2);
 
 
                     dr.Close();
