@@ -21,7 +21,10 @@ namespace onlineExam
                     
 
                 }
-               
+                else
+                {
+                    Response.Redirect("Default.aspx");
+                }
             }
         }
 
