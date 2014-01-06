@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDF90AAB-0C2F-43C1-A8CC-1E07106B0BB9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>onlineExam</RootNamespace>
+    <AssemblyName>onlineExam</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="ExamAddUpdate.aspx" />
+    <Content Include="ExamCategoryAddUpdate.aspx" />
+    <Content Include="ExamQuestionAddUpdate.aspx" />
+    <Content Include="ExamQuestions.aspx" />
+    <Content Include="Exams.aspx" />
+    <Content Include="exit.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Examination.aspx" />
+    <Content Include="ExamResult.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\bg-button-submit.gif" />
+    <Content Include="Images\bg-input-text.gif" />
+    <Content Include="Images\bg-link-next.png" />
+    <Content Include="Images\bulb.png" />
+    <Content Include="Images\bulb2.png" />
+    <Content Include="Images\down.gif" />
+    <Content Include="Images\drop.gif" />
+    <Content Include="Images\drop.png" />
+    <Content Include="Images\empty.gif" />
+    <Content Include="Images\Exam.jpg" />
+    <Content Include="Images\formelements-select.png" />
+    <Content Include="Images\formelements.png" />
+    <Content Include="Images\image02.jpg" />
+    <Content Include="Images\images.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logo1.jpg" />
+    <Content Include="Images\none.gif" />
+    <Content Include="Images\t1.png" />
+    <Content Include="Images\t2.png" />
+    <Content Include="Images\t3.png" />
+    <Content Include="Images\up.gif" />
+    <Content Include="Images\up.png" />
+    <Content Include="LoginStudent.aspx" />
+    <Content Include="LoginTeacher.aspx" />
+    <Content Include="OuestionAdd.aspx" />
+    <Content Include="Previousexams.aspx" />
+    <Content Include="ExamCategories.aspx" />
+    <Content Include="ReviewQuestions.aspx" />
+    <Content Include="Scripts\cufon-fonts.js" />
+    <Content Include="Scripts\cufon-settings.js" />
+    <Content Include="Scripts\cufon.js" />
+    <Content Include="Scripts\jquery-1.4.2.min.js" />
+    <Content Include="Scripts\jquery.main.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\slide.js" />
+    <Content Include="Style\formElements.css" />
+    <Content Include="Style\grid.css" />
+    <Content Include="Images\invalid.png" />
+    <Content Include="Style\login.css" />
+    <Content Include="Style\leftmenu.css" />
+    <Content Include="Images\red_asterisk.png" />
+    <Content Include="Style\slide.css" />
+    <Content Include="Style\menu.css" />
+    <Content Include="Style\reset.css" />
+    <Content Include="Style\style.css" />
+    <Content Include="Style\styles.css" />
+    <Content Include="Images\valid.png" />
+    <Content Include="TakeExam.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamAddUpdate.aspx.cs">
+      <DependentUpon>ExamAddUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamAddUpdate.aspx.designer.cs">
+      <DependentUpon>ExamAddUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamCategoryAddUpdate.aspx.cs">
+      <DependentUpon>ExamCategoryAddUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamCategoryAddUpdate.aspx.designer.cs">
+      <DependentUpon>ExamCategoryAddUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamQuestionAddUpdate.aspx.cs">
+      <DependentUpon>ExamQuestionAddUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamQuestionAddUpdate.aspx.designer.cs">
+      <DependentUpon>ExamQuestionAddUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExamQuestions.aspx.cs">
+      <DependentUpon>ExamQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamQuestions.aspx.designer.cs">
+      <DependentUpon>ExamQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exams.aspx.cs">
+      <DependentUpon>Exams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exams.aspx.designer.cs">
+      <DependentUpon>Exams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="exit.aspx.cs">
+      <DependentUpon>exit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="exit.aspx.designer.cs">
+      <DependentUpon>exit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DBUtil.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Examination.aspx.cs">
+      <DependentUpon>Examination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Examination.aspx.designer.cs">
+      <DependentUpon>Examination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Examination.cs" />
+    <Compile Include="ExamResult.aspx.cs">
+      <DependentUpon>ExamResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamResult.aspx.designer.cs">
+      <DependentUpon>ExamResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LoginStudent.aspx.cs">
+      <DependentUpon>LoginStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginStudent.aspx.designer.cs">
+      <DependentUpon>LoginStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginTeacher.aspx.cs">
+      <DependentUpon>LoginTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginTeacher.aspx.designer.cs">
+      <DependentUpon>LoginTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OuestionAdd.aspx.cs">
+      <DependentUpon>OuestionAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OuestionAdd.aspx.designer.cs">
+      <DependentUpon>OuestionAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Previousexams.aspx.cs">
+      <DependentUpon>Previousexams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Previousexams.aspx.designer.cs">
+      <DependentUpon>Previousexams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="ExamCategories.aspx.cs">
+      <DependentUpon>ExamCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExamCategories.aspx.designer.cs">
+      <DependentUpon>ExamCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewQuestions.aspx.cs">
+      <DependentUpon>ReviewQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReviewQuestions.aspx.designer.cs">
+      <DependentUpon>ReviewQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TakeExam.aspx.cs">
+      <DependentUpon>TakeExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TakeExam.aspx.designer.cs">
+      <DependentUpon>TakeExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\QuestionImage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Main.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50890</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
