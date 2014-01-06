@@ -164,7 +164,7 @@
                                                             value="" tabindex="1" required></span>
                                                 </div>
                                                 <div class="row">
-                                                    <a href="#" class="forgot">Forgot your password?</a>
+                                                    <a href="#" class="forgot">SIGN UP</a>
                                                     <label for="Password">
                                                         Password</label>
                                                     <span class="text">
@@ -240,7 +240,7 @@
                                                             style="display: inline-block;" ></span>
                                                 </div>
                                                 <div style="margin: 10px 0 0 130px;">
-                                                    <asp:Button ID="btnSave" class="submit" runat="server" Text="Login" OnClick="btnLogin_Click" />
+                                                    <asp:Button ID="btnSave" class="submit" runat="server" Text="Save" OnClick="btnLogin_Click" />
                                                     <div style="margin-left: 101px; margin-top: -34px;">
                                                         <span class="nevermind"><a href="#">Oh, nevermind.</a></span></div>
                                                 </div>
